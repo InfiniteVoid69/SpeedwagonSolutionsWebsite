@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { navItems } from "./resources";
+import { Button } from "./buttons";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,56 +33,48 @@ const Navigation = () => {
               </ul>
             </div>
 
-            {/* Right: Contact + Mobile Toggle */}
+            {/* Right: Mobile Toggle */}
             <div className="flex flex-1 justify-end gap-2 items-center">
-              <div className="flex items-center lg:w-auto lg:flex-row lg:gap-2">
-                <a href="#" className="inline mr-2">
-                  <button>Contact</button>
-                </a>
-              </div>
+              <Button
+                size="small"
+                buttonType="secondary"
+                isLoading={false}
+                onClick={() => console.log("button clicked")}
+              >
+                Contact
+              </Button>
               <button
-                onClick={() => {
-                  console.log("button clicked");
-                  setIsOpen(!isOpen);
-                }}
-                className="flex overflow-x-hidden lg:hidden items-center w-8 justify-center"
+                onClick={() => setIsOpen(!isOpen)}
+                className="flex flex-col justify-center items-center w-8 h-8 z-50 lg:hidden"
                 aria-label="Toggle menu"
               >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <rect
-                    x="1"
-                    y="7.5"
-                    width="14"
-                    height="1"
-                    rx="0.5"
-                    className="origin-center transition-transform duration-200 ease-out translate-y-[-3.5px]"
-                  ></rect>
-                  <rect
-                    x="1"
-                    y="7.5"
-                    width="14"
-                    height="1"
-                    rx="0.5"
-                    className="origin-center transition-transform duration-200 ease-out translate-y-[3.5px]"
-                  ></rect>
-                </svg>
+                <span
+                  className={`h-0.5 w-6 my-0.5 bg-white transition-transform duration-300 ${
+                    isOpen ? "rotate-45 translate-y-1.5" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-6 my-0.5 bg-white transition-opacity duration-300 ${
+                    isOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <span
+                  className={`h-0.5 w-6 my-0.5 bg-white transition-transform duration-300 ${
+                    isOpen ? "-rotate-45 -translate-y-1.5" : ""
+                  }`}
+                />
               </button>
             </div>
           </nav>
-
-          {/* Mobile Dropdown */}
           {isOpen && (
-            <div className="md:hidden mt-4">
-              <ul className="flex flex-col gap-4">
+            <div className="absolute top-full left-0 z-40 w-full h-[calc(100vh)] bg-[#000] text-white px-6 py-6 transition-all duration-300">
+              <ul className="flex flex-col gap-6 text-xl font-medium">
                 {navItems.map((item) => (
                   <li key={item.id}>
-                    <a href={item.link}>{item.name}</a>
+                    <a href={item.link} className="flex justify-between items-center">
+                      <span>{item.name}</span>
+                      {/* {item.submenu && <span className="text-gray-400">▾</span>} */}
+                    </a>
                   </li>
                 ))}
               </ul>

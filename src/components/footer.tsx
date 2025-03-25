@@ -38,7 +38,7 @@ const footer = () => {
               className="hover:text-text-primary"
               href="mailto:contact@speedwagonsolutions.com"
             >
-              contact@speedwagonsolutions.com
+              Email
             </a>
           </p>
           <p>Fort Worth, TX</p>

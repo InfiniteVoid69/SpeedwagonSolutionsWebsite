@@ -1,4 +1,6 @@
-
+import React from 'react';
+import classNames from 'classnames';
+import { FaCircleNotch } from 'react-icons/fa';
 export const buttonSizes = [
     'small',
     'medium',
@@ -14,57 +16,61 @@ export const variations = [
 ] as const
 export type variation = (typeof variations)[number]
 
-interface buttonObjects{
-    size: buttonSize
-    buttonType: variation
-    isDisables?: boolean
-    isLoading?: boolean
-    isRounded?: boolean
-}
+type ButtonProps = {
+  children: React.ReactNode;
+  size?: buttonSize;
+  buttonType?: variation;
+  isDisabled?: boolean;
+  isLoading?: boolean;
+  isRounded?: boolean;
+  onClick?: () => void;
+  className?: string;
+};
 
-${({ size }) =>
-    match(size, {
-      xs: () => css`
-        ${horizontalPadding(8)}
-        height: 28px;
-        font-size: 12px;
-      `,
-      s: () => css`
-        ${horizontalPadding(16)}
-        height: 36px;
-        font-size: 14px;
-      `,
-      m: () => css`
-        ${horizontalPadding(20)}
-        height: 40px;
-        font-size: 14px;
-      `,
-      l: () => css`
-        ${horizontalPadding(20)}
-        height: 48px;
-        font-size: 16px;
-      `,
-      xl: () => css`
-        ${horizontalPadding(28)}
-        height: 56px;
-        font-size: 16px;
-      `,
-    })}
+export const Button = ({
+  children,
+  size = 'medium',
+  buttonType = 'primary',
+  isDisabled = false,
+  isLoading = false,
+  isRounded = true,
+  onClick,
+  className,
+}: ButtonProps) => {
+  const sizeClasses = {
+    small: 'text-sm px-4 py-1.5',
+    medium: 'text-base px-5 py-2',
+    large: 'text-lg px-6 py-2.5',
+  };
 
-${({ kind }) =>
-    match(kind, {
-      primary: () => css`
-        background: ${getColor('primary')};
-        color: ${({ theme: { colors } }) =>
-          colors.primary
-            .getHighestContrast(colors.background, colors.contrast)
-            .toCssValue()};
-      `,
-      secondary: () => css`
-        background: ${getColor('secondary')};
-        color: ${getColor('contrast')};
-      `,
-      alert: () => css`
-        background: ${getColor('alert')};
-        color: ${getColor('white')};
-    })}
+  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-colors duration-200 cursor-pointer';
+
+  const buttonTypeClasses = {
+    primary: 'bg-[#19181b] text-white hover:bg-[#2a292d]',
+    secondary: 'bg-transparent text-white border-2 border-white/50 hover:bg-white/5',
+    alert: 'bg-red-600 text-white hover:bg-red-700',
+    teretary: 'bg-white text-black hover:bg-gray-100',
+  };
+
+  const classes = classNames(
+    baseClasses,
+    sizeClasses[size],
+    buttonTypeClasses[buttonType],
+    {
+      'rounded-full': !isRounded,
+      'rounded-md': isRounded,
+      'opacity-50 cursor-not-allowed': isDisabled || isLoading,
+    },
+    className
+  );
+
+  return (
+    <button className={classes} onClick={onClick} disabled={isDisabled || isLoading}>
+      {isLoading ? (
+        <FaCircleNotch className="animate-spin text-white text-lg" />
+      ) : (
+        children
+      )}
+    </button>
+  );
+};
