@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 const GoogleReviews = () => {
   return (
-    <section className="bg-[#19181b] mt-8 py-12 text-gray-100">
+    <section className="bg-primary text-gray-100">
         <script
           src="https://static.elfsight.com/platform/platform.js"
           async

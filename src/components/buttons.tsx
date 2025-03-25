@@ -43,11 +43,11 @@ export const Button = ({
     large: 'text-lg px-6 py-2.5',
   };
 
-  const baseClasses = 'inline-flex items-center justify-center font-semibold transition-colors duration-200 cursor-pointer';
+  const baseClasses = 'flex items-center justify-center font-semibold transition-colors duration-200';
 
   const buttonTypeClasses = {
-    primary: 'bg-[#19181b] text-white hover:bg-[#2a292d]',
-    secondary: 'bg-transparent text-white border-2 border-white/50 hover:bg-white/5',
+    primary: 'bg-secondary text-black hover:bg-secondary/85',
+    secondary: 'bg-transparent text-text-primary border-2 border-secondary/50 hover:bg-secondary/5',
     alert: 'bg-red-600 text-white hover:bg-red-700',
     teretary: 'bg-white text-black hover:bg-gray-100',
   };
@@ -59,13 +59,16 @@ export const Button = ({
     {
       'rounded-full': !isRounded,
       'rounded-md': isRounded,
-      'opacity-50 cursor-not-allowed': isDisabled || isLoading,
+      'opacity-50': isDisabled || isLoading,
+      'cursor-not-allowed': isDisabled,
+      'cursor-progress': isLoading,
+      'cursor-pointer': !isDisabled && !isLoading,
     },
     className
   );
 
   return (
-    <button className={classes} onClick={onClick} disabled={isDisabled || isLoading}>
+    <button className={classes} onClick={onClick} disabled={isLoading || isDisabled}>
       {isLoading ? (
         <FaCircleNotch className="animate-spin text-white text-lg" />
       ) : (

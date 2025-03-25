@@ -2,7 +2,10 @@
 
 @theme {
   --color-primary: #19181b;
+  --color-secondary: #e6e7e4;
+  --color-accent1: #222124;
   --color-text-primary: #f2f2f2;
+  --color-text-secondary: #0d0d0d;
 }
 
 html {

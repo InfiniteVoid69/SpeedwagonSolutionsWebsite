@@ -1,10 +1,12 @@
-const about = () => {
+import { Button } from "../buttons";
+
+const About = () => {
   return (
     <section className="mt-8 py-12 px-4 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
       <div className="md:col-span-2 text-gray-200">
         <h2 className="text-4xl font-bold leading-tight">
           <span className="text-text-primary">Exterior Cleaning</span>{" "}
-          <span className="text-blue-400">You Can Trust</span>
+          <span className="text-text-primary">You Can Trust</span>
         </h2>
         <p className="mt-4 text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -15,16 +17,13 @@ const about = () => {
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <a
-          href="/about"
-          className="inline-block mt-6 bg-blue-600 hover:bg-blue-700 text-text-primary font-semibold py-2 px-5 rounded transition-colors duration-300"
-        >
+        <Button buttonType="secondary" className="mt-6" onClick={() => (window.location.href = '/about')}>
           Learn More
-        </a>
+        </Button>
       </div>
 
-      <div className="bg-gray-800 p-4 rounded shadow-md space-y-4">
-        <div className="border-l-4 border-blue-400 pl-3">
+      <div className="bg-accent1 p-4 rounded shadow-md space-y-4">
+        <div className="border-l-4 border-primary pl-3">
           <h3 className="font-semibold text-text-primary">What We Offer</h3>
         </div>
         <ul className="space-y-2 text-gray-300">
@@ -38,4 +37,4 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;

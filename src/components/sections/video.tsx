@@ -1,6 +1,6 @@
 import videoBg from "../../assets/videos/backgroundVideo1.mp4";
 
-const video = () => {
+const Video = () => {
   return (
     <div className="w-full h-screen">
       <video
@@ -14,4 +14,4 @@ const video = () => {
   );
 };
 
-export default video;
+export default Video;
