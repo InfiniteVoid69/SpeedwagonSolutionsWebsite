@@ -16,11 +16,25 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const isFormValid = form.fullName && form.lastName && form.email && form.phone;
+  const isFormValid = form.fullName && form.lastName && form.email && /^\(\d{3}\) \d{3}-\d{4}$/.test(form.phone);
+
+  const formatPhoneNumber = (value: string) => {
+    const digits = value.replace(/\D/g, '').slice(0, 10);
+    const parts = [
+      digits.slice(0, 3),
+      digits.slice(3, 6),
+      digits.slice(6, 10),
+    ];
+    if (digits.length > 6) return `(${parts[0]}) ${parts[1]}-${parts[2]}`;
+    if (digits.length > 3) return `(${parts[0]}) ${parts[1]}`;
+    if (digits.length > 0) return `(${parts[0]}`;
+    return '';
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    const updatedValue = name === 'phone' ? formatPhoneNumber(value) : value;
+    setForm({ ...form, [name]: updatedValue });
   };
 
   return (
@@ -51,7 +65,7 @@ const Contact = () => {
             phone: '',
             message: '',
           });
-          setConfirmation('Message sent!');
+          setConfirmation('Message sent! You will be contacted soon');
           setTimeout(() => setConfirmation(''), 5000);
           setLoading(false);
         } catch (error) {
@@ -121,6 +135,8 @@ const Contact = () => {
               onChange={handleChange}
               className={InputBox}
               placeholder="(123) 456-7890"
+              pattern="\(\d{3}\) \d{3}-\d{4}"
+              title="Enter a phone number in the format (123) 456-7890"
             />
           </div>
         </div>
