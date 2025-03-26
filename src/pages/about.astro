@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/layout.astro";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import GoogleReviews from "../components/sections/googelReviews";
+import Contact from "../components/sections/contact.tsx";
+---
+
+<Layout title="About">
+  <Header client:load />
+
+  <section class="px-4 py-12 max-w-4xl mx-auto text-white">
+    <h1 class="text-4xl font-bold mb-6 text-center">About Speedwagon Solutions</h1>
+    <p class="mb-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+      est laborum.
+    </p>
+    <p class="mb-4">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </p>
+  </section>
+
+  <GoogleReviews client:visible />
+  <Contact client:visible />
+  <Footer />
+</Layout>
