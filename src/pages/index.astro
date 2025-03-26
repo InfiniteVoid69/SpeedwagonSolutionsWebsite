@@ -1,13 +1,12 @@
 ---
 import Layout from '../layouts/layout.astro';
-import HelloWorld from '../components/tools/helloWorld'
-import Footer from '../components/footer';
 import Header from '../components/header'
-import Video from '../components/sections/video'
+import Footer from '../components/footer';
+import Video from '../components/video.tsx'
 import About from '../components/sections/about'
 import GoogleReviews from '../components/sections/googelReviews'
-import TestButton from '../components/tools/testButton'
 import Contact from '../components/sections/contact.tsx'
+import TestButton from '../components/tools/testButton'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -22,7 +21,7 @@ import Contact from '../components/sections/contact.tsx'
 		</div> -->
 	</div>
 	<About client:visible/>
-	<GoogleReviews />
+	<GoogleReviews client:visible/>
 	<Contact client:visible/>
-	<Footer />
+	<Footer/>
 </Layout>

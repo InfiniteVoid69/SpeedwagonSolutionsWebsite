@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Button } from '../buttons';
-import RequiredIcon from '../css/requiredIcon';
-import InputBox from '../css/inputBox';
+import RequiredIcon from '../../styles/css/requiredIcon';
+import InputBox from '../../styles/css/inputBox';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -39,7 +39,7 @@ const Contact = () => {
 
   return (
     <section className="mt-8 py-12 max-w-xl mx-auto text-white rounded-xl p-6 space-y-6">
-      <h2 className="text-2xl font-semibold text-white text-center">Contact Us</h2>
+      <h2 className="text-2xl font-semibold text-white text-center">Request a Quote</h2>
       <form className="space-y-4" onSubmit={async (e) => {
         e.preventDefault();
         setLoading(true);

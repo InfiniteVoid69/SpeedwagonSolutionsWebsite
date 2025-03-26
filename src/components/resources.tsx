@@ -4,7 +4,7 @@ export const navItems = [
   {
     id: 1,
     name: "About",
-    link: "#",
+    link: "/about",
   },
   {
     id: 2,

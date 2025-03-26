@@ -72,7 +72,7 @@ const Navigation = () => {
             </div>
           </nav>
           {isOpen && (
-            <div className="lg:hidden absolute top-full left-0 z-40 w-full h-[calc(100vh)] bg-[#000] text-white flex justify-center transition-all duration-300">
+            <div className="lg:hidden absolute top-full left-0 z-40 w-full h-[calc(100vh)] bg-primary text-white flex justify-center transition-all duration-300">
               <ul className="flex flex-col items-center gap-6 text-xl font-medium mt-12">
                 {navItems.map((item) => (
                   <li key={item.id}>
