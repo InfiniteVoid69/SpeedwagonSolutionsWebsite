@@ -11,6 +11,10 @@ const Contact = () => {
     phone: '',
     message: '',
   });
+  
+  const [confirmation, setConfirmation] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const isFormValid = form.fullName && form.lastName && form.email && form.phone;
 
@@ -22,7 +26,40 @@ const Contact = () => {
   return (
     <section className="mt-8 py-12 max-w-xl mx-auto text-white rounded-xl p-6 space-y-6">
       <h2 className="text-2xl font-semibold text-white text-center">Contact Us</h2>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+
+        try {
+          const response = await fetch('/api/contactForm', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(form),
+          });
+
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+
+          setForm({
+            fullName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            message: '',
+          });
+          setConfirmation('Message sent!');
+          setTimeout(() => setConfirmation(''), 5000);
+          setLoading(false);
+        } catch (error) {
+          console.error('Failed to send email:', error  );
+          setError(`Failed to send message: ${error instanceof Error ? error.message : 'Oppsie, IDK what this is! Have fun :3'}`);
+          setLoading(false);
+        }
+      }}>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
             <label htmlFor="fullName" className={`block text-sm font-medium mb-1 ${RequiredIcon}`}>
@@ -102,9 +139,15 @@ const Contact = () => {
           />
         </div>
         <div className="pt-4">
-          <Button size="large" buttonType="primary" className="w-full" isDisabled={!isFormValid}>
-            Submit
+          <Button size="large" buttonType="primary" className="w-full" isDisabled={!isFormValid} isLoading={loading}>
+            {loading ? 'Sending...' : 'Submit'}
           </Button>
+          {confirmation && (
+            <p className="text-green-400 text-center mt-2">{confirmation}</p>
+          )}
+          {error && (
+            <p className="text-red-400 text-center mt-2">{error}</p>
+          )}
         </div>
       </form>
     </section>
