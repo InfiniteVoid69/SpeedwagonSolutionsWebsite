@@ -12,6 +12,7 @@ const footer = () => {
           <div className="flex space-x-4">
             {socialMedia.map((item) => (
               <a
+                key={item.id}
                 href={item.link}
                 target="_blank"
                 aria-label={item.name}

@@ -59,7 +59,7 @@ export const services = [
     id: 1,
     name: "Pressure Washing",
     link: '/services/pressure-washing',
-    photo: '',
+    photo: '#',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Driveways", "Sidewalks", "Brick", "Drive Thrus"]
   },
@@ -67,7 +67,7 @@ export const services = [
     id: 2,
     name: "Soft Wash",
     link: '/services/soft-washing',
-    photo: '',
+    photo: '#',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Roofs", "Siding", "Stucco"]
   },
@@ -75,7 +75,7 @@ export const services = [
     id: 3,
     name: "Window Washing",
     link: '/services/window-washing',
-    photo: '',
+    photo: '#',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Exterior Windows", "Interior Windows", "Glass Doors"]
   },

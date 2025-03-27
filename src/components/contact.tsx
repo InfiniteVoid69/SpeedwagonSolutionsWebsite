@@ -60,7 +60,7 @@ const Contact = () => {
           setError("");
 
           try {
-            const response = await fetch("/api/contactForm", {
+            const response = await fetch("/src/pages/api/formHandler.ts", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -69,7 +69,7 @@ const Contact = () => {
             });
 
             if (!response.ok) {
-              throw new Error("Network response was not ok");
+              throw new Error(`[${response.status}: ${response.statusText}]`);
             }
 
             setForm({
@@ -85,7 +85,7 @@ const Contact = () => {
             setTimeout(() => setConfirmation(""), 5000);
             setLoading(false);
           } catch (error) {
-            console.error("Failed to send email:", error);
+            console.error("Failed to send email :/ ", error);
             setError(
               `Failed to send message: ${error instanceof Error ? error.message : "Oppsie, IDK what this is! Have fun :3"}`
             );
