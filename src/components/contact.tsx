@@ -81,13 +81,14 @@ const Contact = () => {
               address: "",
               service: "",
             });
+            console.log(`[${response.status}: ${response.statusText}]`)
             setConfirmation("Message sent! You will be contacted soon");
             setTimeout(() => setConfirmation(""), 5000);
             setLoading(false);
-          } catch (error) {
-            console.error("Failed to send email :/ ", error);
+          } catch (err) {
+            console.error("Failed to send email :/ ", err);
             setError(
-              `Failed to send message: ${error instanceof Error ? error.message : "Oppsie, IDK what this is! Have fun :3"}`
+              `Failed to send message: ${err instanceof Error ? err.message : "Oppsie, IDK what this is! Have fun :3"}`
             );
             setLoading(false);
           }
