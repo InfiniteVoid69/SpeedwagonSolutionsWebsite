@@ -1,82 +1,104 @@
-import { useState } from 'react';
-import { Button } from './buttons';
-import RequiredIcon from '../styles/css/requiredIcon';
-import InputBox from '../styles/css/inputBox';
+import { useState } from "react";
+import { Button } from "./buttons";
+import { services } from "./resources";
+import RequiredIcon from "../styles/css/requiredIcon";
+import DropdownMenu from "../styles/css/dropdownMenu";
+import InputBox from "../styles/css/inputBox";
+import requiredIcon from "../styles/css/requiredIcon";
 
 const Contact = () => {
   const [form, setForm] = useState({
-    fullName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    message: '',
+    fullName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+    address: "",
+    service: "",
   });
-  
-  const [confirmation, setConfirmation] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
 
-  const isFormValid = form.fullName && form.lastName && form.email && /^\(\d{3}\) \d{3}-\d{4}$/.test(form.phone);
+  const [confirmation, setConfirmation] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const isFormValid =
+    form.fullName &&
+    form.lastName &&
+    form.email &&
+    /^\(\d{3}\) \d{3}-\d{4}$/.test(form.phone) &&
+    form.service;
 
   const formatPhoneNumber = (value: string) => {
-    const digits = value.replace(/\D/g, '').slice(0, 10);
-    const parts = [
-      digits.slice(0, 3),
-      digits.slice(3, 6),
-      digits.slice(6, 10),
-    ];
+    const digits = value.replace(/\D/g, "").slice(0, 10);
+    const parts = [digits.slice(0, 3), digits.slice(3, 6), digits.slice(6, 10)];
     if (digits.length > 6) return `(${parts[0]}) ${parts[1]}-${parts[2]}`;
     if (digits.length > 3) return `(${parts[0]}) ${parts[1]}`;
     if (digits.length > 0) return `(${parts[0]}`;
-    return '';
+    return "";
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
-    const updatedValue = name === 'phone' ? formatPhoneNumber(value) : value;
+    const updatedValue = name === "phone" ? formatPhoneNumber(value) : value;
     setForm({ ...form, [name]: updatedValue });
   };
 
   return (
     <section className="mt-8 py-12 max-w-xl mx-auto text-text-primary rounded-xl p-6 space-y-6">
-      <h2 className="text-2xl font-semibold text-text-primary text-center">Request a Quote</h2>
-      <form className="space-y-4" onSubmit={async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError('');
+      <h2 className="text-2xl font-semibold text-text-primary text-center">
+        Request a Quote
+      </h2>
+      <form
+        className="space-y-4"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          setLoading(true);
+          setError("");
 
-        try {
-          const response = await fetch('/api/contactForm', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(form),
-          });
+          try {
+            const response = await fetch("/api/contactForm", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(form),
+            });
 
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+
+            setForm({
+              fullName: "",
+              lastName: "",
+              email: "",
+              phone: "",
+              message: "",
+              address: "",
+              service: "",
+            });
+            setConfirmation("Message sent! You will be contacted soon");
+            setTimeout(() => setConfirmation(""), 5000);
+            setLoading(false);
+          } catch (error) {
+            console.error("Failed to send email:", error);
+            setError(
+              `Failed to send message: ${error instanceof Error ? error.message : "Oppsie, IDK what this is! Have fun :3"}`
+            );
+            setLoading(false);
           }
-
-          setForm({
-            fullName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            message: '',
-          });
-          setConfirmation('Message sent! You will be contacted soon');
-          setTimeout(() => setConfirmation(''), 5000);
-          setLoading(false);
-        } catch (error) {
-          console.error('Failed to send email:', error  );
-          setError(`Failed to send message: ${error instanceof Error ? error.message : 'Oppsie, IDK what this is! Have fun :3'}`);
-          setLoading(false);
-        }
-      }}>
+        }}
+      >
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
-            <label htmlFor="fullName" className={`block text-sm font-medium mb-1 ${RequiredIcon}`}>
+            <label
+              htmlFor="fullName"
+              className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
+            >
               First name
             </label>
             <input
@@ -91,7 +113,10 @@ const Contact = () => {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="lastName" className={`block text-sm font-medium mb-1 ${RequiredIcon}`}>
+            <label
+              htmlFor="lastName"
+              className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
+            >
               Last name
             </label>
             <input
@@ -108,7 +133,10 @@ const Contact = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
-            <label htmlFor="email" className={`block text-sm font-medium mb-1 ${RequiredIcon}`}>
+            <label
+              htmlFor="email"
+              className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
+            >
               Email
             </label>
             <input
@@ -123,7 +151,10 @@ const Contact = () => {
             />
           </div>
           <div className="flex-1">
-            <label htmlFor="phone" className={`block text-sm font-medium mb-1 ${RequiredIcon}`}>
+            <label
+              htmlFor="phone"
+              className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
+            >
               Phone
             </label>
             <input
@@ -138,6 +169,47 @@ const Contact = () => {
               pattern="\(\d{3}\) \d{3}-\d{4}"
               title="Enter a phone number in the format (123) 456-7890"
             />
+          </div>
+        </div>
+        <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex-1">
+            <label htmlFor="address" className="block text-sm font-medium mb-1">
+              Address / Zipcode
+            </label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={form.address}
+              onChange={handleChange}
+              className={InputBox}
+              placeholder="123 Main St, 90210"
+            />
+          </div>
+          <div className="flex-1">
+            <label
+              htmlFor="service"
+              className={`block text-sm font-medium mb-1 ${requiredIcon}`}
+            >
+              Service
+            </label>
+            <select
+              id="service"
+              name="service"
+              value={form.service}
+              onChange={handleChange}
+              className={DropdownMenu}
+              required
+            >
+              <option value="" disabled>
+                Select a service
+              </option>
+              {services.map((service) => (
+                <option value={service.name} key={service.id}>
+                  {service.name}
+                </option>
+              ))}
+            </select>
           </div>
         </div>
         <div>
@@ -155,15 +227,19 @@ const Contact = () => {
           />
         </div>
         <div className="pt-4">
-          <Button size="large" buttonType="primary" className="w-full" isDisabled={!isFormValid} isLoading={loading}>
-            {loading ? 'Sending...' : 'Submit'}
+          <Button
+            size="large"
+            buttonType="primary"
+            className="w-full"
+            isDisabled={!isFormValid}
+            isLoading={loading}
+          >
+            {loading ? "Sending..." : "Submit"}
           </Button>
           {confirmation && (
             <p className="text-green-400 text-center mt-2">{confirmation}</p>
           )}
-          {error && (
-            <p className="text-red-400 text-center mt-2">{error}</p>
-          )}
+          {error && <p className="text-red-400 text-center mt-2">{error}</p>}
         </div>
       </form>
     </section>

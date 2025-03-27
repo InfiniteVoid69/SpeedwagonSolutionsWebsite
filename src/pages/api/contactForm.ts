@@ -6,7 +6,7 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export async function POST(context: { request: Request }) {
   try {
-    const { fullName, lastName, email, phone, message } = await context.request.json();
+    const { fullName, lastName, email, phone, address, service, message } = await context.request.json();
 
     const htmlBody = `
       <h2>New Contact Form Submission</h2>
@@ -14,6 +14,8 @@ export async function POST(context: { request: Request }) {
       <p><strong>Last Name:</strong> ${lastName}</p>
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Address:</strong> ${address}</p>
+      <p><strong>Service:</strong> ${service}</p>
       <p><strong>Message:</strong><br/>${message}</p>
     `;
 
