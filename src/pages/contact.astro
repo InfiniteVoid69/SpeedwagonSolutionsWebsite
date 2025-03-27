@@ -1,11 +1,11 @@
 ---
-import Layout from '../layouts/layout.astro';
-import Contact from '../components/contact.tsx'
+import Layout from "../layouts/layoutMain.astro";
+import Contact from "../components/contact.tsx";
 ---
 
-<Layout title="Contact Us">
-  <section class="max-w-3xl mx-auto px-6 py-16 text-white">
+<Layout title="Contact">
+  <section class="max-w-3xl mx-auto px-6 py-16 text-primary">
     <h1 class="text-4xl font-bold mb-8 text-center">Contact Us</h1>
-    <Contact client:visible/>
+    <Contact client:visible />
   </section>
 </Layout>
