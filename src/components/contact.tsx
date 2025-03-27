@@ -100,7 +100,7 @@ const Contact = () => {
               htmlFor="fullName"
               className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
             >
-              First name
+              First Name
             </label>
             <input
               type="text"
@@ -118,7 +118,7 @@ const Contact = () => {
               htmlFor="lastName"
               className={`block text-sm font-medium mb-1 ${RequiredIcon}`}
             >
-              Last name
+              Last Name
             </label>
             <input
               type="text"
@@ -175,7 +175,7 @@ const Contact = () => {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex-1">
             <label htmlFor="address" className="block text-sm font-medium mb-1">
-              Address / Zipcode
+              Address
             </label>
             <input
               type="text"
