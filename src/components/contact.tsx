@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Button } from '../buttons';
-import RequiredIcon from '../../styles/css/requiredIcon';
-import InputBox from '../../styles/css/inputBox';
+import { Button } from './buttons';
+import RequiredIcon from '../styles/css/requiredIcon';
+import InputBox from '../styles/css/inputBox';
 
 const Contact = () => {
   const [form, setForm] = useState({

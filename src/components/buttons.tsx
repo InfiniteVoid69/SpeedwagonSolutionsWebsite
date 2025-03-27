@@ -46,8 +46,8 @@ export const Button = ({
   const baseClasses = 'flex items-center justify-center font-semibold transition-colors duration-200';
 
   const buttonTypeClasses = {
-    primary: 'bg-secondary text-black hover:bg-secondary/85',
-    secondary: 'bg-transparent text-text-primary border-2 border-secondary/50 hover:bg-secondary/5',
+    primary: 'bg-[#197dff] text-text-secondary hover:bg-[#197dff]/85',
+    secondary: 'bg-transparent text-text-primary border-2 border-secondary/50 hover:bg-secondary/50',
     alert: 'bg-red-600 text-white hover:bg-red-700',
     teretary: 'bg-white text-black hover:bg-gray-100',
   };
