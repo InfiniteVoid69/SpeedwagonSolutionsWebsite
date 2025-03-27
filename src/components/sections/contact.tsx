@@ -38,8 +38,8 @@ const Contact = () => {
   };
 
   return (
-    <section className="mt-8 py-12 max-w-xl mx-auto text-white rounded-xl p-6 space-y-6">
-      <h2 className="text-2xl font-semibold text-white text-center">Request a Quote</h2>
+    <section className="mt-8 py-12 max-w-xl mx-auto text-text-primary rounded-xl p-6 space-y-6">
+      <h2 className="text-2xl font-semibold text-text-primary text-center">Request a Quote</h2>
       <form className="space-y-4" onSubmit={async (e) => {
         e.preventDefault();
         setLoading(true);

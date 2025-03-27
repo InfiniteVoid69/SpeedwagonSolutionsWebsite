@@ -3,7 +3,7 @@ import { Button } from "../buttons";
 const About = () => {
   return (
     <section className="mt-8 py-12 px-4 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-      <div className="md:col-span-2 text-gray-200">
+      <div className="md:col-span-2 text-primary">
         <h2 className="text-4xl font-bold leading-tight">
           <span className="text-text-primary">Exterior Cleaning</span>{" "}
           <span className="text-text-primary">You Can Trust</span>

@@ -2,7 +2,7 @@ import { locations, navItems, socialMedia } from "./resources";
 
 const footer = () => {
   return (
-    <footer className="bg-[#222124] text-gray-400 py-12 mt-12">
+    <footer className="bg-secondary text-gray-600 py-12 mt-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
         {/* Logo and Socials */}
         <div className="flex flex-col items-center md:items-start space-y-4">
