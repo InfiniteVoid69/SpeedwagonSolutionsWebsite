@@ -53,3 +53,27 @@ export const socialMedia = [
     icon: <FaYelp />,
   },
 ];
+
+export const services = [
+  {
+    id: 1,
+    name: "Pressure Washing",
+    photo: '',
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["Driveways", "Sidewalks", "Brick", "Drive Thrus"]
+  },
+  {
+    id: 2,
+    name: "Soft Wash",
+    photo: '',
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["Roofs", "Siding", "Stucco"]
+  },
+  {
+    id: 3,
+    name: "Window Washing",
+    photo: '',
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["Exterior Windows", "Interior Windows", "Glass Doors"]
+  },
+]
