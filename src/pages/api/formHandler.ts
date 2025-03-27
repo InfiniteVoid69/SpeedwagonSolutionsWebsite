@@ -1,28 +1,22 @@
 export const prerender = false;
-
 import { Resend } from 'resend';
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const timestamp = new Date().toLocaleString();
 
 export async function POST(context: { request: Request }) {
   try {
-    const { fullName, lastName, email, phone, address, service, message } = await context.request.json();
+    const formData = await context.request.json();
 
-    const htmlBody = `
-      <h2>New Contact Form Submission</h2>
-      <p><strong>First Name:</strong> ${fullName}</p>
-      <p><strong>Last Name:</strong> ${lastName}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
-      <p><strong>Address:</strong> ${address}</p>
-      <p><strong>Service:</strong> ${service}</p>
-      <p><strong>Message:</strong><br/>${message}</p>
-    `;
+    let htmlBody = `<h2>New Form Submission: ${timestamp} </h2>`;
+    for (const [key, value] of Object.entries(formData)) {
+      htmlBody += `<p><strong>${key.replace(/([A-Z])/g, ' $1')}:</strong> ${value}</p>`;
+    }
 
     await resend.emails.send({
       from: 'Speedwagon Contact <forms@speedwagonsolutions.com>',
       to: ['contact@speedwagonsolutions.com'],
-      subject: 'Contact Form Submission',
+      subject: 'Form Submission',
       html: htmlBody,
     });
 
