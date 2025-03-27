@@ -60,7 +60,7 @@ const Contact = () => {
           setError("");
 
           try {
-            const response = await fetch("/src/pages/api/formHandler.ts", {
+            const response = await fetch("/api/formHandler", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
