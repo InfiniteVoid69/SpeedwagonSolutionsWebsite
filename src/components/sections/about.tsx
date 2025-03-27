@@ -21,18 +21,6 @@ const About = () => {
           Learn More
         </Button>
       </div>
-
-      <div className="bg-accent1 p-4 rounded shadow-md space-y-4">
-        <div className="border-l-4 border-primary pl-3">
-          <h3 className="font-semibold text-text-primary">What We Offer</h3>
-        </div>
-        <ul className="space-y-2 text-gray-300">
-          <li>🏠 House Washing</li>
-          <li>🧼 Concrete Cleaning</li>
-          <li>🧽 Roof & Gutter Cleaning</li>
-          <li>🏢 Commercial Pressure Washing</li>
-        </ul>
-      </div>
     </section>
   );
 };
