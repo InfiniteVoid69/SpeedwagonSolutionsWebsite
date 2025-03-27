@@ -77,9 +77,9 @@ const Contact = () => {
               lastName: "",
               email: "",
               phone: "",
-              message: "",
               address: "",
               service: "",
+              message: "",
             });
             console.log(`[${response.status}: ${response.statusText}]`)
             setConfirmation("Message sent! You will be contacted soon");
