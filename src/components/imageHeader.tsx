@@ -14,7 +14,7 @@ const ImageHeader: React.FC<ImageHeaderProps> = ({ title, subtitle, backgroundIm
     >
       <div className="absolute inset-0 bg-blue-950/60 flex items-center justify-center">
         <div className="text-center text-white px-4">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">{title}</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-2">{title}</h1>
           {subtitle && <p className="text-xl md:text-2xl">{subtitle}</p>}
         </div>
       </div>
