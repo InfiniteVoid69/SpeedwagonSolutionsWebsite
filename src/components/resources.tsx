@@ -76,11 +76,11 @@ export const services = [
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Exterior Windows", "Interior Windows", "Glass Doors"],
   },
-  {
-    id: "line-Striping",
-    name: "Line Striping",
-    photo: "/images/zaworld.gif",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tags: ["Parking Lots", "Asphalt", "Concrete", "Warehouses"],
-  },
+  // {
+  //   id: "line-Striping",
+  //   name: "Line Striping",
+  //   photo: "/images/",
+  //   info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  //   tags: ["Parking Lots", "Asphalt", "Concrete", "Warehouses"],
+  // },
 ];
