@@ -3,6 +3,7 @@ import Layout from "../layouts/layoutMain.astro";
 import ImageHeader from "../components/imageHeader";
 import GoogleReviews from "../components/sections/googelReviews";
 import Contact from "../components/contact";
+import PhotoGallery from "../components/photoGallery";
 ---
 
 <Layout title="About">
@@ -30,6 +31,9 @@ import Contact from "../components/contact";
     </p>
   </section>
 
-  <GoogleReviews client:load />
+<!-- Section For Gallery Might make into a component -->
+ 
+  <PhotoGallery client:load/>
+  <GoogleReviews client:idle />
   <Contact client:visible />
 </Layout>

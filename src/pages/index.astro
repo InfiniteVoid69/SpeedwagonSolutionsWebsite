@@ -2,7 +2,7 @@
 import Layout from "../layouts/layoutMain.astro";
 import Video from "../components/video.tsx";
 import About from "../components/sections/about";
-import Services from "../components/sections/services";
+import Services from "../components/services";
 import GoogleReviews from "../components/sections/googelReviews";
 import Contact from "../components/contact.tsx";
 
@@ -19,6 +19,6 @@ import Contact from "../components/contact.tsx";
   </div>
   <About client:visible />
   <Services client:visible/>
-  <GoogleReviews client:load />
+  <GoogleReviews client:idle />
   <Contact client:visible />
 </Layout>

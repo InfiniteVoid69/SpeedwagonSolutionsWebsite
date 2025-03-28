@@ -3,3 +3,6 @@ const inputBox = (
 )
 
 export default inputBox
+
+/* TODO */
+/* make this functional, expandable and shit */
