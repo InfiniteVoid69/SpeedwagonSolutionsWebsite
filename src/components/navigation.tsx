@@ -4,7 +4,6 @@ import { Button } from "./buttons";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <div className="new-container w-full">
       <div className="px-3 md:px-4">
@@ -14,7 +13,7 @@ const Navigation = () => {
             <div className="flex flex-1 items-center gap-6">
               <div className="block items-center w-full">
                 <a
-                  className="text-text-secondary font-bold text-sm sm:text-base whitespace-nowrap"
+                  className="text-text-secondary font-bold text-sm sm:text-base whitespace-nowrap" /* Text Should Shrink on all screens :) */
                   href="/"
                 >
                   Speedwagon Solutions
