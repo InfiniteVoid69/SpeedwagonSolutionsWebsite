@@ -56,35 +56,31 @@ export const socialMedia = [
 
 export const services = [
   {
-    id: 1,
+    id: "residential-washing",
     name: "Residential",
-    link: '/services/residential-washing',
-    photo: '/images/jjba.gif',
+    photo: "/images/jjba.gif",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tags: ["Driveways", "Sidewalks", "Brick", "Drive Thrus"]
+    tags: ["Houses", "Driveways & Walkways", "Roofs", "Decks & Patios"],
   },
   {
-    id: 2,
+    id: "commercial-washing",
     name: "Commercial",
-    link: '/services/commercial-washing',
-    photo: '/images/dance.gif',
+    photo: "/images/dance.gif",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tags: ["Roofs", "Siding", "Stucco"]
+    tags: ["Fast Food", "Restaurants", "Property Management"],
   },
   {
-    id: 3,
+    id: "window-washing",
     name: "Window Washing",
-    link: '/services/window-washing',
-    photo: '/images/lick.gif',
+    photo: "/images/lick.gif",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tags: ["Exterior Windows", "Interior Windows", "Glass Doors"]
+    tags: ["Exterior Windows", "Interior Windows", "Glass Doors"],
   },
   {
-    id: 4,
+    id: "line-Striping",
     name: "Line Striping",
-    link: '/services/line-Striping',
-    photo: '/images/zaworld.gif',
+    photo: "/images/zaworld.gif",
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    tags: ["Parking Lots"]
+    tags: ["Parking Lots", "Asphalt", "Concrete", "Warehouses"],
   },
-]
+];
