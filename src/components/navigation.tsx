@@ -13,7 +13,10 @@ const Navigation = () => {
             {/* Left: Logo */}
             <div className="flex flex-1 items-center gap-6">
               <div className="block items-center w-full">
-                <a className="text-text-secondary font-bold" href="/">
+                <a
+                  className="text-text-secondary font-bold text-sm sm:text-base whitespace-nowrap"
+                  href="/"
+                >
                   Speedwagon Solutions
                 </a>
               </div>
