@@ -1,12 +1,20 @@
 ---
 import Layout from "../layouts/layoutMain.astro";
+import ImageHeader from "../components/imageHeader";
 import GoogleReviews from "../components/sections/googelReviews";
 import Contact from "../components/contact";
 ---
 
 <Layout title="About">
-  <section class="px-4 py-12 max-w-4xl mx-auto text-white">
-    <h1 class="text-4xl font-bold mb-6 text-center">About Speedwagon Solutions</h1>
+  <ImageHeader
+    title="About Us"
+    subtitle="How We Help people every day live a cleaner life"
+    backgroundImage="/images/jjba.gif"
+  />
+  <section class="px-4 py-12 max-w-4xl mx-auto text-black">
+    <h1 class="text-4xl font-bold mb-6 text-center">
+      About Speedwagon Solutions
+    </h1>
     <p class="mb-4">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -22,6 +30,6 @@ import Contact from "../components/contact";
     </p>
   </section>
 
-  <GoogleReviews client:visible />
+  <GoogleReviews client:load />
   <Contact client:visible />
 </Layout>
