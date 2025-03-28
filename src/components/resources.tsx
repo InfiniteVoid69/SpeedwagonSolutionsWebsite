@@ -59,7 +59,7 @@ export const services = [
     id: 1,
     name: "Residential",
     link: '/services/residential-washing',
-    photo: '/src/assets/jjba.gif',
+    photo: '/images/jjba.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Driveways", "Sidewalks", "Brick", "Drive Thrus"]
   },
@@ -67,7 +67,7 @@ export const services = [
     id: 2,
     name: "Commercial",
     link: '/services/commercial-washing',
-    photo: '/src/assets/jjba.gif',
+    photo: '/images/dance.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Roofs", "Siding", "Stucco"]
   },
@@ -75,7 +75,7 @@ export const services = [
     id: 3,
     name: "Window Washing",
     link: '/services/window-washing',
-    photo: '/src/assets/jjba.gif',
+    photo: '/images/lick.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Exterior Windows", "Interior Windows", "Glass Doors"]
   },
@@ -83,7 +83,7 @@ export const services = [
     id: 4,
     name: "Line Striping",
     link: '/services/line-Striping',
-    photo: '/src/assets/jjba.gif',
+    photo: '/images/zaworld.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Parking Lots"]
   },
