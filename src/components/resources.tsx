@@ -57,17 +57,17 @@ export const socialMedia = [
 export const services = [
   {
     id: 1,
-    name: "Pressure Washing",
-    link: '/services/pressure-washing',
-    photo: '#',
+    name: "Residential",
+    link: '/services/residential-washing',
+    photo: '/src/assets/jjba.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Driveways", "Sidewalks", "Brick", "Drive Thrus"]
   },
   {
     id: 2,
-    name: "Soft Wash",
-    link: '/services/soft-washing',
-    photo: '#',
+    name: "Commercial",
+    link: '/services/commercial-washing',
+    photo: '/src/assets/jjba.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Roofs", "Siding", "Stucco"]
   },
@@ -75,8 +75,16 @@ export const services = [
     id: 3,
     name: "Window Washing",
     link: '/services/window-washing',
-    photo: '#',
+    photo: '/src/assets/jjba.gif',
     info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     tags: ["Exterior Windows", "Interior Windows", "Glass Doors"]
+  },
+  {
+    id: 4,
+    name: "Line Striping",
+    link: '/services/line-Striping',
+    photo: '/src/assets/jjba.gif',
+    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    tags: ["Parking Lots"]
   },
 ]
