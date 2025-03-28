@@ -81,7 +81,7 @@ const Contact = () => {
               service: "",
               message: "",
             });
-            console.log(`[${response.status}: ${response.statusText}]`)
+            console.log(`[${response.status}: ${response.statusText}]`);
             setConfirmation("Message sent! You will be contacted soon");
             setTimeout(() => setConfirmation(""), 5000);
             setLoading(false);
