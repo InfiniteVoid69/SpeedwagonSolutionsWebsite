@@ -1,0 +1,73 @@
+---
+import Layout from "../../layouts/layoutMain.astro";
+import Contact from "../../components/contact";
+import ImageHeader from "../../components/imageHeader";
+import GoogleReviews from "../../components/sections/googelReviews";
+---
+
+<Layout title="Services">
+  <ImageHeader
+    title="Commercial Washing"
+    subtitle="Learn How We Help Buisnesses Every Day"
+    backgroundImage="/images/zaworld.gif"
+  />
+  <section class="py-20 px-4 max-w-7xl mx-auto text-center">
+    <h2 class="text-5xl font-bold mb-6">Hello Clean!</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+      Our services are designed to meet your needs with precision and care. We
+      strive to deliver exceptional quality, ensuring your satisfaction every
+      step of the way. Discover how our solutions stand apart:
+    </p>
+
+    <ul
+      class="grid sm:grid-cols-1 md:grid-cols-2 gap-6 text-gray-700 max-w-5xl mx-auto mt-8 text-left"
+    >
+      <li class="flex items-start gap-4">
+        <div>
+          <strong>Fast Turnaround:</strong> We respond quickly and clean efficiently,
+          minimizing disruption to your schedule.
+        </div>
+      </li>
+      <li class="flex items-start gap-4">
+        <div>
+          <strong>Flexible Scheduling:</strong> We work around your hours to avoid
+          interference with your business or routine.
+        </div>
+      </li>
+      <li class="flex items-start gap-4">
+        <div>
+          <strong>Professional Equipment:</strong> We use industrial-grade pressure washing
+          equipment.
+        </div>
+      </li>
+      <li class="flex items-start gap-4">
+        <div>
+          <strong>Clear Communication:</strong> From quote to completion, we keep
+          you in the loop and informed every step of the way.
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="py-20 px-4 max-w-7xl mx-auto text-center">
+    <h2 class="text-5xl font-bold mb-6">Our Cleaning Process</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+    Our commercial cleaning process is tailored to deliver outstanding results while ensuring the safety and longevity of your property. Here's how we approach each project:
+    </p>
+    <div class="grid sm:grid-cols-1 md:grid-cols-2 gap-8 text-left">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-2xl font-semibold mb-4">Pressure Washing</h3>
+        <p class="text-gray-700">
+          Pressure washing uses high-pressure water to remove dirt, grime, and stains from hard surfaces like concrete, brick, and stone. It is ideal for tough cleaning jobs but may not be suitable for delicate surfaces.
+        </p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h3 class="text-2xl font-semibold mb-4">Grease Removal</h3>
+        <p class="text-gray-700">
+            Grease removal is essential for maintaining a clean and safe environment, especially in commercial kitchens. We use specialized degreasers and techniques to effectively eliminate grease buildup.
+        </p>
+      </div>
+    </div>
+  </section>
+  <Contact />
+</Layout>
