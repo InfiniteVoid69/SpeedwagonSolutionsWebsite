@@ -58,22 +58,22 @@ export const services = [
   {
     id: "residential-washing",
     name: "Residential",
-    photo: "/images/jjba.gif",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    photo: "/images/RESIDENTIAL.jpg",
+    info: "Residential pressure washing services are designed to clean and maintain the exterior surfaces of homes, including houses, driveways, walkways, roofs, decks, and patios.",
     tags: ["Houses", "Driveways & Walkways", "Roofs", "Decks & Patios"],
   },
   {
     id: "commercial-washing",
     name: "Commercial",
-    photo: "/images/dance.gif",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    photo: "/images/COMMERCIAL.jpg",
+    info: "Commercial pressure washing services are designed to clean and maintain the exterior surfaces of businesses, ensuring a professional appearance.",
     tags: ["Fast Food", "Restaurants", "Property Management"],
   },
   {
     id: "window-washing",
     name: "Window Washing",
-    photo: "/images/lick.gif",
-    info: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    photo: "/images/WINDOW.jpg",
+    info: "Window washing services involve the cleaning of glass surfaces in residential and commercial buildings, ensuring clear visibility and enhancing the overall appearance.",
     tags: ["Exterior Windows", "Interior Windows", "Glass Doors"],
   },
   // {

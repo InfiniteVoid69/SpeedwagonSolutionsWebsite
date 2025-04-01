@@ -6,12 +6,9 @@ import "swiper/css/scrollbar";
 /* Will eventually make this with firebase or some shit to allow for dynamically uplaoding photos */
 
 const imageList = [
-  "/images/gallery/dance.gif",
-  "/images/gallery/jjba.gif",
-  "/images/gallery/lick.gif",
-  "/images/gallery/dance.gif",
-  "/images/gallery/zaworld.gif",
-  "/images/gallery/dance.gif",
+  "/images/COMMERCIAL.jpg",
+  "/images/WINDOW.jpg",
+  "/images/RESIDENTIAL.jpg",
 ];
 
 const PhotoGallery = () => {
