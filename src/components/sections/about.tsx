@@ -9,13 +9,9 @@ const About = () => {
           <span className="text-text-primary">You Can Trust</span>
         </h2>
         <p className="mt-4 text-lg">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          At Speedwagon Solutions, we specialize in providing top-notch exterior cleaning services for residential and commercial properties. Our team of experienced professionals is dedicated to delivering exceptional results that exceed your expectations.
+          We understand the importance of maintaining the appearance and integrity of your property, which is why we use commercial equipment and cleaning solutions to ensure a thorough and safe cleaning process.
+          Whether you need pressure washing, window cleaning, or gutter cleaning, we have the expertise and resources to handle any job, big or small. Our commitment to customer satisfaction means that we go above and beyond to ensure that you are happy with the results.
         </p>
         <Button buttonType="secondary" className="mt-6" onClick={() => (window.location.href = '/about')}>
           Learn More
