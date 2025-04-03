@@ -3,6 +3,7 @@ import Layout from "../layouts/layoutMain.astro";
 import ImageHeader from "../components/imageHeader";
 import GoogleReviews from "../components/sections/googelReviews";
 import Contact from "../components/contact";
+import Services from "../components/services";
 import PhotoGallery from "../components/photoGallery";
 ---
 
@@ -17,23 +18,41 @@ import PhotoGallery from "../components/photoGallery";
       About Speedwagon Solutions
     </h1>
     <p class="mb-4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
+      Our goal is to build long-lasting relationships with our clients by
+      providing reliable, efficient, and affordable services.
     </p>
     <p class="mb-4">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
+      At Speedwagon Solutions, we offer a wide range of services tailored to
+      meet the unique needs of our customers. From professional cleaning to
+      specialized maintenance, we are committed to delivering top-notch
+      solutions that exceed expectations. Our team takes pride in being flexible
+      and accommodating, ensuring that we adapt to your specific requirements
+      and schedule. Your satisfaction is our priority, and we strive to make
+      every interaction seamless and stress-free.
+    </p>
+    <p class="mb-4">
+      We keep you in the loop every step of the way, providing regular updates
+      and clear communication. Our goal is to ensure that you feel informed and
+      confident in the services we provide. We understand that your time is
+      valuable, and we work diligently to complete our tasks efficiently. We
+      work with you to check on our progress and make sure that we are meeting
+      your needs. We are always available to answer any questions or address any
+      concerns you may have. We believe that open communication is key to a
+      successful partnership, and we want you to feel comfortable reaching out
+      to us at any time.
+    </p>
+    <p class="mb-4">
+      We are committed to your satisfaction. We believe that our services should
+      be done right the first time, ensuring there are no return trips to fix
+      mistakes. Our team takes pride in delivering thorough and precise work, so
+      you can trust that the job is completed to the highest standards on our
+      first visit.
     </p>
   </section>
 
-<!-- Section For Gallery Might make into a component -->
- 
-  <PhotoGallery client:load/>
+  <Services client:visible />
+  <!-- Section For Gallery Might make into a component -->
+  <PhotoGallery client:load />
   <GoogleReviews client:idle />
   <Contact client:visible />
 </Layout>
