@@ -10,10 +10,11 @@ const About = () => {
         </h2>
         <p className="mt-4 text-lg">
           Speedwagon Solutions specialize in providing top-notch pressure
-          washing, soft washing, and more services expanding fast. We service
-          both residential and commercial properties. Our team of professionals
-          is dedicated to delivering exceptional results while ensuring the
-          safety and satisfaction of our clients.
+          washing, soft washing, and more. Our services are constanly expanding,
+          allowing us to better help, you, the customer. We service both
+          residential and commercial properties. Our team of professionals is
+          dedicated to delivering exceptional results while ensuring the safety
+          and satisfaction of our clients.
         </p>
         <Button
           buttonType="secondary"
