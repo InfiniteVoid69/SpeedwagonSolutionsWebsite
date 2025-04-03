@@ -24,6 +24,13 @@ const About = () => {
           Learn More
         </Button>
       </div>
+      <div className="md:col-span-1">
+        <img
+          src="/images/COMMERCIAL.jpg"
+          alt="Exterior Cleaning"
+          className="w-full h-auto rounded-lg shadow-md"
+        />
+      </div>
     </section>
   );
 };
