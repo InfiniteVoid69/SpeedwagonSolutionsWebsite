@@ -26,7 +26,7 @@ const About = () => {
       </div>
       <div className="md:col-span-1">
         <img
-          src="/images/COMMERCIAL.jpg"
+          src="/images/gallery/IMG_2013.jpg"
           alt="Exterior Cleaning"
           className="w-full h-auto rounded-lg shadow-md"
         />
