@@ -9,6 +9,9 @@ const imageList = [
   "/images/COMMERCIAL.jpg",
   "/images/WINDOW.jpg",
   "/images/RESIDENTIAL.jpg",
+  "/images/gallery/IMG_2025.jpg",
+  "/images/gallery/IMG_2016.jpg",
+  "/images/gallery/IMG_2013.jpg",
 ];
 
 const PhotoGallery = () => {
