@@ -5,6 +5,7 @@ import About from "../components/about.tsx";
 import Services from "../components/services";
 import GoogleReviews from "../components/googelReviews.tsx";
 import Contact from "../components/contact.tsx";
+import PhotoGallery from "../components/photoGallery";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,6 +19,7 @@ import Contact from "../components/contact.tsx";
 		</div> -->
   </div>
   <About client:visible />
+  <PhotoGallery client:visible />
   <Services client:visible/>
   <GoogleReviews client:idle />
   <Contact client:visible />
