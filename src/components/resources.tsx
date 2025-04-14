@@ -46,12 +46,7 @@ export const navItems = [
       name: service.name,
       link: `/services/${service.id}`,
     })),
-  },
-  {
-    id: 3,
-    name: "Pricing",
-    link: "#",
-  },
+  }
 ];
 
 export const locations = [
